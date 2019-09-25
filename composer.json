@@ -1,0 +1,22 @@
+{
+    "name": "codetensor/tagger",
+    "description": "An Eloquent Tagging Package for Laravel, to enable tags & taggables behavior for laravel 5.6+ apps",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pramana",
+            "email": "pramanadiputra@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Codetensor\\Tagger\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.0.0",
+        "illuminate/database": ">=5.0",
+        "illuminate/support": ">=5.0"
+    }
+}
