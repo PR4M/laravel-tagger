@@ -29,6 +29,30 @@ Trait Tagging
 		$this->addTags($this->getWorkableTags($tags));
 	}
 
+	public function untag($tags = null)
+	{
+		if ($tags === null) {
+			$this->removeAllTags();
+			return;
+		}
+
+		$this->removeTags($this->getWorkableTags($tags));
+	}
+
+	private function removeTags(Collection $tags)
+	{
+		$this->tags()->detach($tags);
+
+		foreach ($tags->where('count', '>', 0) as $tag) {
+			$tag->decrement('count');
+		}
+	}
+
+	private function removeAllTags()
+	{
+		$this->removeTags($this->tags);
+	}
+
 	/**
 	 *
 	 */
