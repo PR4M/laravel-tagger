@@ -39,6 +39,13 @@ Trait Tagging
 		$this->removeTags($this->getWorkableTags($tags));
 	}
 
+	public function retag($tags)
+	{
+		$this->removeAllTags();
+
+		$this->tag($tags);
+	}
+
 	private function removeTags(Collection $tags)
 	{
 		$this->tags()->detach($tags);
