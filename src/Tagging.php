@@ -10,6 +10,7 @@ use Illuminate\Support\Arr;
 
 Trait Tagging
 {
+	use TaggableScopeTrait;
 	/**
 	 * Return collection of tagged rows related to the tagged model
 	 *
